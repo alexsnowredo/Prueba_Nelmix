@@ -1,0 +1,18 @@
+El codigo esta divido en dos archivo.py el archivo api.py que es una API web utilizando el framework FastAPI en Python. La API permite gestionar información de un hotel, incluyendo habitaciones y autobuses. A continuación se detalla el propósito de cada sección del código:
+y el archivo main.py que se encuentra afuera de la carpeta App 
+para usar el codigo debes hacer un entorno virtual en Python y luego instalar el requirements.txt
+y luego para usar la api primero cd App una ves dentro del directorio aplica el comando:>uvicorn api:app --reload 
+para main.py solo usa el comando >py main.py  
+1. **Configuración de la Base de Datos**: Define las tablas y la configuración para una base de datos SQLite utilizando SQLAlchemy. Esto incluye la información del hotel, tipos de habitaciones, autobuses, etc.
+
+2. **Modelos Pydantic**: Define modelos Pydantic que se utilizan para validar los datos de entrada y salida de la API. Esto asegura que los datos sean correctos y estructurados.
+
+3. **Función `get_db`**: Define una función para obtener una instancia de sesión de la base de datos. Esto permite interactuar con la base de datos de manera segura.
+
+4. **Rutas de la API**: Define las rutas (endpoints) de la API. Cada ruta corresponde a una operación diferente, como obtener información del hotel, listar habitaciones, reservar autobuses, realizar check-out, etc.
+
+5. **Inicialización de Datos de Prueba**: Dentro de la función `init_data`, se generan datos de prueba para el hotel, habitaciones y autobuses. Esto se hace al arrancar la aplicación y llena la base de datos con información ficticia.
+
+6. **Código de Ejecución Principal**: Al final del archivo, el código inicia la aplicación FastAPI y arranca el servidor web. Antes de hacerlo, se llama a `init_data` para llenar la base de datos con datos de prueba.
+
+El código proporciona una estructura básica para una API de gestión de hotel. Puedes acceder a las rutas definidas para interactuar con la base de datos y los datos de prueba. También se proporciona un código adicional para interactuar con la API a través de solicitudes HTTP usando la biblioteca HTTPX. Esto permite probar y utilizar la API desde un programa externo.
